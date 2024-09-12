@@ -86,7 +86,7 @@ const Timer = () => {
 
   return (
     <>
-      <h1 className="title">25 + 5 Clock</h1>  {/* Title added here */}
+      <h1 className="title">25 + 5 Clock</h1> {/* Title added here */}
       <div className="App">
         <h2 id="timer-label">{timerLabel}</h2>
         <div id="time-left">{formatTime(timeLeft)}</div>
@@ -94,20 +94,54 @@ const Timer = () => {
           <div className="session-controls">
             <h3 id="session-label">Session Length</h3>
             <div id="session-length">{sessionLength}</div>
-            <button onClick={handleDecrementSession} id="session-decrement">-</button>
-            <button onClick={handleIncrementSession} id="session-increment">+</button>
+            <button
+              onClick={handleDecrementSession}
+              id="session-decrement"
+              type="button" // Added explicit type attribute
+            >
+              -
+            </button>
+            <button
+              onClick={handleIncrementSession}
+              id="session-increment"
+              type="button" // Added explicit type attribute
+            >
+              +
+            </button>
           </div>
           <div className="break-controls">
             <h3 id="break-label">Break Length</h3>
             <div id="break-length">{breakLength}</div>
-            <button onClick={handleDecrementBreak} id="break-decrement">-</button>
-            <button onClick={handleIncrementBreak} id="break-increment">+</button>
+            <button
+              onClick={handleDecrementBreak}
+              id="break-decrement"
+              type="button" // Added explicit type attribute
+            >
+              -
+            </button>
+            <button
+              onClick={handleIncrementBreak}
+              id="break-increment"
+              type="button" // Added explicit type attribute
+            >
+              +
+            </button>
           </div>
         </div>
-        <button onClick={handleStartStop} id="start_stop">
+        <button
+          onClick={handleStartStop}
+          id="start_stop"
+          type="button" // Added explicit type attribute
+        >
           {isRunning ? 'Pause' : 'Start'}
         </button>
-        <button onClick={handleReset} id="reset">Reset</button>
+        <button
+          onClick={handleReset}
+          id="reset"
+          type="button" // Added explicit type attribute
+        >
+          Reset
+        </button>
         <audio
           id="beep"
           ref={audioRef}
