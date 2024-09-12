@@ -1,18 +1,15 @@
-// src/App.js
+import { Provider } from 'react-redux'; // Move this import to the top
 import React from 'react';
 import Timer from './Timer';
-import { Provider } from 'react-redux';
 import store from './redux/store';
 import './App.css';
 
-const App = () => {
-    return (
-        <Provider store={store}>
-            <div className="App">
-                <Timer />
-            </div>
-        </Provider>
-    );
-};
+const App = () => (
+  <Provider store={store}>
+    <div className="App">
+      <Timer />
+    </div>
+  </Provider>
+);
 
 export default App;
