@@ -12,11 +12,11 @@ import {
 
 const Timer = () => {
   const dispatch = useDispatch();
-  const { 
-    breakLength, 
-    sessionLength, 
-    timeLeft, 
-    isRunning 
+  const {
+    breakLength,
+    sessionLength,
+    timeLeft,
+    isRunning,
   } = useSelector((state) => state);
 
   const [timerLabel, setTimerLabel] = useState('Session');
