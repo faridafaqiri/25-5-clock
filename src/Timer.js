@@ -12,9 +12,15 @@ import {
 
 const Timer = () => {
   const dispatch = useDispatch();
-  const { breakLength, sessionLength, timeLeft, isRunning } = useSelector((state) => state);
+  const { 
+    breakLength, 
+    sessionLength, 
+    timeLeft, 
+    isRunning 
+  } = useSelector((state) => state);
+
   const [timerLabel, setTimerLabel] = useState('Session');
-  const audioRef = useRef(null); // Create a ref for the audio element
+  const audioRef = useRef(null);
 
   useEffect(() => {
     let timer;
@@ -24,7 +30,7 @@ const Timer = () => {
       }, 1000);
     } else if (timeLeft === 0) {
       if (audioRef.current) {
-        audioRef.current.play(); // Play audio using the ref
+        audioRef.current.play();
       }
       if (timerLabel === 'Session') {
         setTimerLabel('Break');
@@ -34,7 +40,7 @@ const Timer = () => {
         dispatch({ type: 'SWITCH_TO_SESSION', sessionLength });
       }
     }
-    return () => clearInterval(timer); // Cleanup
+    return () => clearInterval(timer);
   }, [isRunning, timeLeft, dispatch, timerLabel, breakLength, sessionLength]);
 
   const formatTime = (time) => {
@@ -46,10 +52,10 @@ const Timer = () => {
   const handleReset = () => {
     if (audioRef.current) {
       audioRef.current.pause();
-      audioRef.current.currentTime = 0; // Reset audio to the start
+      audioRef.current.currentTime = 0;
     }
-    dispatch(resetTimer()); // Reset break and session lengths
-    setTimerLabel('Session'); // Reset the timer label to "Session"
+    dispatch(resetTimer());
+    setTimerLabel('Session');
   };
 
   const handleStartStop = () => {
@@ -86,7 +92,7 @@ const Timer = () => {
 
   return (
     <>
-      <h1 className="title">25 + 5 Clock</h1> {/* Title added here */}
+      <h1 className="title">25 + 5 Clock</h1>
       <div className="App">
         <h2 id="timer-label">{timerLabel}</h2>
         <div id="time-left">{formatTime(timeLeft)}</div>
@@ -97,14 +103,14 @@ const Timer = () => {
             <button
               onClick={handleDecrementSession}
               id="session-decrement"
-              type="button" // Added explicit type attribute
+              type="button"
             >
               -
             </button>
             <button
               onClick={handleIncrementSession}
               id="session-increment"
-              type="button" // Added explicit type attribute
+              type="button"
             >
               +
             </button>
@@ -115,14 +121,14 @@ const Timer = () => {
             <button
               onClick={handleDecrementBreak}
               id="break-decrement"
-              type="button" // Added explicit type attribute
+              type="button"
             >
               -
             </button>
             <button
               onClick={handleIncrementBreak}
               id="break-increment"
-              type="button" // Added explicit type attribute
+              type="button"
             >
               +
             </button>
@@ -131,14 +137,14 @@ const Timer = () => {
         <button
           onClick={handleStartStop}
           id="start_stop"
-          type="button" // Added explicit type attribute
+          type="button"
         >
           {isRunning ? 'Pause' : 'Start'}
         </button>
         <button
           onClick={handleReset}
           id="reset"
-          type="button" // Added explicit type attribute
+          type="button"
         >
           Reset
         </button>
