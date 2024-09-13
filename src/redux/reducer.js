@@ -8,6 +8,15 @@ import {
   TICK,
 } from './actions';
 
+// Function to handle audio reset
+const resetAudio = () => {
+  const beepReset = document.getElementById('beep');
+  if (beepReset) {
+    beepReset.pause();
+    beepReset.currentTime = 0;
+  }
+};
+
 const initialState = {
   sessionLength: 25,
   breakLength: 5,
@@ -52,24 +61,19 @@ const reducer = (state = initialState, action) => {
         }
         : state;
 
-    case RESET: {
-      const beepReset = document.getElementById('beep');
-      if (beepReset) {
-        beepReset.pause();
-        beepReset.currentTime = 0;
-      }
+    case RESET:
+      resetAudio();
       return {
         ...initialState,
         timeLeft: 1500,
         isActive: false,
         timerLabel: 'Session',
       };
-    }
 
     case START_STOP:
       return { ...state, isActive: !state.isActive };
 
-    case TICK: {
+    case TICK:
       if (state.timeLeft > 0) {
         return { ...state, timeLeft: state.timeLeft - 1 };
       }
@@ -84,7 +88,6 @@ const reducer = (state = initialState, action) => {
         };
       }
       return state;
-    }
 
     default:
       return state;
