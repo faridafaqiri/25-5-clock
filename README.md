@@ -86,3 +86,4 @@ You can contact me through the following:
 - The JavaScript library used to build the application.
 - Redux 
 - The library used for state management in the application.---Feel free to replace placeholders like URLs and personal information with your actual details!
+
