@@ -1,69 +1,54 @@
 body {
+  background-color: #f3e5ab;
   font-family: 'Arial', sans-serif;
-  background-color: bisque;
-  color: #333;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
   margin: 0;
-  flex-direction: column;
-}
-
-.title {
-  font-size: 2.5rem;
-  color: #ff6f20;
-  margin-bottom: 20px;
-}
-
-.App {
-  text-align: center;
-  border-radius: 10px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-  background-color: #f7f7f7;
   padding: 20px;
-  width: 90%;
-  max-width: 400px;
+  overflow: hidden;
 }
 
-h2 {
-  font-size: 1.5rem;
-  margin: 20px 0 10px;
-}
-
-#time-left {
-  font-size: 3rem;
-  margin: 20px 0;
-  color: #ff6f20;
-}
-
-.controls {
-  display: flex;
-  justify-content: space-between;
-  margin: 20px 0;
-}
-
-.session-controls,
-.break-controls {
+.display-container {
   text-align: center;
+  margin: 40px auto;
+  padding: 15px;
+  max-width: 250px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-button {
-  background-color: #ff6f20;
-  border: none;
+.timer {
+  font-size: 30px;
+  color: #ff5722;
+}
+
+.control-label {
+  font-weight: bold;
+  margin: 8px 0;
+}
+
+.control-value {
+  font-size: 18px;
+  margin: 8px 0;
+}
+
+.control-button,
+.action-button {
+  background-color: #ff5722;
   color: white;
-  padding: 10px 20px;
-  font-size: 1rem;
-  margin: 10px;
+  border: none;
   border-radius: 5px;
+  padding: 6px;
+  margin: 5px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  font-size: 14px;
 }
 
-button:hover {
-  background-color: #d04809;
+.control-button:hover,
+.action-button:hover {
+  background-color: #e64a19;
 }
 
-audio {
-  display: none;
+button:disabled {
+  background-color: gray;
+  cursor: not-allowed;
 }

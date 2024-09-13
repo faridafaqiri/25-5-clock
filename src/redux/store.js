@@ -1,7 +1,6 @@
-// src/redux/store.js
 import { createStore } from 'redux';
-import timerReducer from './reducers';
+import reducer from './reducer';
 
-const store = createStore(timerReducer);
+const store = createStore(reducer);
 
 export default store;
