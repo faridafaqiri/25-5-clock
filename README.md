@@ -16,7 +16,7 @@ Check out the live demo [here](./src/Capture.JPG).
 
 ## 🌐 Live Link
 
-[Live Demo](https://your-live-demo-link.com)
+[Live Demo](https://deploy-preview-1--aquamarine-starlight-51fb6f.netlify.app)
 
 
 ## Technologies Used 🛠️
