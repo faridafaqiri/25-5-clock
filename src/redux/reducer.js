@@ -30,35 +30,35 @@ const reducer = (state = initialState, action) => {
     case INCREMENT_SESSION:
       return state.sessionLength < 60
         ? {
-          ...state,
-          sessionLength: state.sessionLength + 1,
-          timeLeft: (state.sessionLength + 1) * 60,
-        }
+            ...state,
+            sessionLength: state.sessionLength + 1,
+            timeLeft: (state.sessionLength + 1) * 60,
+          }
         : state;
 
     case DECREMENT_SESSION:
       return state.sessionLength > 1
         ? {
-          ...state,
-          sessionLength: state.sessionLength - 1,
-          timeLeft: (state.sessionLength - 1) * 60,
-        }
+            ...state,
+            sessionLength: state.sessionLength - 1,
+            timeLeft: (state.sessionLength - 1) * 60,
+          }
         : state;
 
     case INCREMENT_BREAK:
       return state.breakLength < 60
         ? {
-          ...state,
-          breakLength: state.breakLength + 1,
-        }
+            ...state,
+            breakLength: state.breakLength + 1,
+          }
         : state;
 
     case DECREMENT_BREAK:
       return state.breakLength > 1
         ? {
-          ...state,
-          breakLength: state.breakLength - 1,
-        }
+            ...state,
+            breakLength: state.breakLength - 1,
+          }
         : state;
 
     case RESET:
